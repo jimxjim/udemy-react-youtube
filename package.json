@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "build": "NODE_ENV=production webpack --config ./webpack.config.prod.js"
   },
   "author": "",
   "license": "ISC",
@@ -26,7 +27,10 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.16.0",
     "babel-preset-stage-1": "^6.1.18",
+    "es6-promise": "^4.0.5",
+    "eventsource-polyfill": "^0.9.6",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
