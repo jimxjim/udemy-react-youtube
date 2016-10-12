@@ -6,12 +6,12 @@ const prodConfig = {
   entry: [
     'babel-polyfill',
     'eventsource-polyfill',
-    path.join(__dirname, './src/index.js'),
+    path.join(__dirname, './entry.js'),
   ],
   output: {
-    path: path.join(__dirname, '../build'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    path: __dirname,
+    publicPath: '/',
+    filename: 'bundle.js'
   },
   module: {
     loaders: [{
@@ -35,7 +35,7 @@ const prodConfig = {
   plugins: [
     new webpack.DefinePlugin({
       // API_HOST: "'http://git4uap.large-bear.net:9527/api'",
-      // API_HOST: "'http://apiacc.futureworldex.com/api'",
+      API_HOST: "'http://apiacc.futureworldex.com/api'",
       ENV: "'__PROD__'",
     }),
     new webpack.ProvidePlugin({
